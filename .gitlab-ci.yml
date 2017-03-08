@@ -9,3 +9,16 @@ check:
   stage: test
   script:
     art check
+
+pages:
+  stage: deploy
+  script:
+  - mkdir public
+  - art export html
+  - mv index.html public/
+  - mv css public/
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
