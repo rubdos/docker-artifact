@@ -6,7 +6,7 @@ It is perfectly suited as a substitute for installing artifact on your system,
 or as a tool in [GitLab's CI](https://about.gitlab.com/gitlab-ci/).
 For an example on this, refer to
 [this repo's `.gitlab-ci.yml` file](https://github.com/rubdos/docker-artifact/blob/master/.gitlab-ci.yml),
-and [the corresponding out put on GitLab](https://gitlab.com/rubdos/docker-artifact/pipelines).
+and [the corresponding output on GitLab](https://gitlab.com/rubdos/docker-artifact/pipelines).
 
 You can even think about having GitLab generate artifacts of `art export`,
 and have them pushed to a website.
