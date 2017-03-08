@@ -8,3 +8,5 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     rustup run nightly cargo install artifact-app && \
     dnf group remove "C Development Tools and Libraries" -y &&\
     rustup toolchain uninstall nightly
+
+CMD ["/root/.cargo/bin/art","ls"]
