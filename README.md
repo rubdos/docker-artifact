@@ -19,18 +19,20 @@ and have them pushed to a website.
 docker run -v $(pwd):/app --workdir=/app rubdos/artifact
 ```
 
+(i.e., the default command of this Docker image is `art ls`)
+
 or
 
 ```
-docker run -v $(pwd):/app --workdir=/app rubdos/artifact ls
+docker run -v $(pwd):/app --workdir=/app rubdos/artifact art ls
 ```
 
 `art check` is equivalent to
 
 ```
-docker run -v $(pwd):/app --workdir=/app rubdos/artifact check
+docker run -v $(pwd):/app --workdir=/app rubdos/artifact art check
 ```
 
 In general, you can use all art commands, and
-`docker run -v $(pwd):/app --workdir=/app rubdos/artifact`
+`docker run -v $(pwd):/app --workdir=/app rubdos/artifact art`
 serves as a substitute for `art`.
