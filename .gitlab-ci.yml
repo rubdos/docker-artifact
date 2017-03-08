@@ -1,0 +1,11 @@
+image: rubdos/artifact
+
+list:
+  stage: test
+  script:
+    art ls
+
+check:
+  stage: test
+  script:
+    art check
