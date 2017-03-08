@@ -9,7 +9,10 @@ For an example on this, refer to
 and [the corresponding output on GitLab](https://gitlab.com/rubdos/docker-artifact/pipelines).
 
 You can even think about having GitLab generate artifacts of `art export`,
-and have them pushed to a website.
+and have them pushed to a website, or to
+[GitLab pages](https://rubdos.gitlab.io/docker-artifact/)!
+For the latter, there's an example in
+[this repo's `.gitlab-ci.yml` file](https://github.com/rubdos/docker-artifact/blob/master/.gitlab-ci.yml),
 
 ## Usage
 
