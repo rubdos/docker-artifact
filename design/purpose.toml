@@ -2,5 +2,6 @@
 
 [REQ-purpose]
 text = '''
-The purpose of this project is...
+The purpose of this project is to provide an easy to use
+Docker container for artifact.
 '''

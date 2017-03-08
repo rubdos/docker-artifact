@@ -1,0 +1,20 @@
+[REQ-cleanup]
+partof = "REQ-purpose"
+text = '''
+The Docker container should be as compact as possible,
+therefore, we need to cleanup whatever we install.
+'''
+
+[REQ-install-artifact]
+partof = "REQ-purpose"
+text = '''Artifact needs to be installed in the container'''
+
+[SPC-install-artifact]
+text = '''Docker will use Cargo in order to install Artifact'''
+
+[SPC-remove-cargo]
+partof = "REQ-cleanup"
+text = '''Docker will remove Cargo after Artifact was installed'''
+
+[SPC-implement-default-command]
+text = '''When a user runs Docker without arguments, run `art ls` by default'''
