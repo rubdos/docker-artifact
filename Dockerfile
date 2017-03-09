@@ -1,7 +1,5 @@
 FROM fedora:latest
 
-ENV PATH=/root/.cargo/bin:$PATH
-
 # partof: #SPC-install-artifact
 
 RUN dnf groupinstall -y "C Development Tools and Libraries" && \
