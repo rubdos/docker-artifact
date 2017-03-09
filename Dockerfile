@@ -9,9 +9,10 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     dnf clean all && \
     curl https://sh.rustup.rs -sSf | \
            sh -s -- --default-toolchain nightly -y && \
-    rustup run nightly cargo install artifact-app && \
-    dnf group remove "C Development Tools and Libraries" -y &&\
-    rustup toolchain uninstall nightly
+    rustup run nightly cargo install --root=/usr artifact-app && \
+    rustup self uninstall && \
+    rm -rf ~./cargo ~/.rustup && \
+    dnf group remove "C Development Tools and Libraries" -y
 # partof: #SPC-remove-cargo
 
 # partof: #SPC-implement-default-command
