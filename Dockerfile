@@ -5,7 +5,8 @@ ENV PATH=/root/.cargo/bin:$PATH
 # partof: #SPC-install-artifact
 
 RUN dnf groupinstall -y "C Development Tools and Libraries" && \
-    dnf install -y curl file && dnf clean all && \
+    dnf install -y curl file openssh-clients rsync && \
+    dnf clean all && \
     curl https://sh.rustup.rs -sSf | \
            sh -s -- --default-toolchain nightly -y && \
     rustup run nightly cargo install artifact-app && \
