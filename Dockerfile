@@ -1,4 +1,4 @@
-FROM fedora:rawhide
+FROM fedora:latest
 
 ENV PATH=/root/.cargo/bin:$PATH
 
