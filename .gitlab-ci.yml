@@ -1,14 +1,28 @@
 image: rubdos/artifact
 
-list:
+.list: &list
   stage: test
   script:
     art ls
 
-check:
+.check: &check
   stage: test
   script:
     art check
+
+list:
+  <<: *list
+
+check:
+  <<: *check
+
+list:master:
+  <<: *list
+  image: rubdos/artifact:master
+
+check:master:
+  <<: *check
+  image: rubdos/artifact:master
 
 pages:
   stage: deploy
