@@ -6,7 +6,28 @@
 
 This is a convenient Docker image for [artifact](https://github.com/vitiral/artifact).
 
-It is perfectly suited as a substitute for installing artifact on your system,
+## Supported tags and their Dockerfile's
+
+Three kinds of tags are available: `latest`, `master` and specific versions:
+
+- `latest` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/master/Dockerfile))
+  represents the latest release version.
+- `master` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/master/Dockerfile.git))
+- `0.6.4`  ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.4/Dockerfile))
+  equal to `latest`
+- Older versions (unsupported):
+  - `0.6.3` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.3/Dockerfile))
+  - `0.6.2` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.2/Dockerfile))
+  - `0.6.1` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.1/Dockerfile))
+  - `0.6.0` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.0/Dockerfile))
+
+We can reuse our `Dockerfile`'s because we use a clever
+[build hook](https://github.com/rubdos/docker-artifact/blob/master/hooks/build)
+that's able to dispatch between different versions based on the currently building git refspec.
+
+## Possible use cases
+
+This image is perfectly suited as a substitute for installing artifact on your system,
 or as a tool in [GitLab's CI](https://about.gitlab.com/gitlab-ci/).
 For an example on this, refer to
 [this repo's `.gitlab-ci.yml` file](https://github.com/rubdos/docker-artifact/blob/master/.gitlab-ci.yml),
