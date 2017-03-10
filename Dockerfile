@@ -7,13 +7,13 @@ ARG VERSION_ARG
 
 RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     dnf install -y curl file openssh-clients rsync && \
-    dnf clean all && \
     curl https://sh.rustup.rs -sSf | \
            sh -s -- --default-toolchain nightly -y && \
     $HOME/.cargo/bin/rustup run nightly cargo install --root=/usr $VERSION_ARG artifact-app && \
     $HOME/.cargo/bin/rustup self uninstall -y && \
     rm -rf ~./cargo ~/.rustup && \
-    dnf group remove "C Development Tools and Libraries" -y
+    dnf group remove "C Development Tools and Libraries" -y && \
+    dnf clean all && rm -rf /var/cache/dnf
 # partof: #SPC-remove-cargo
 
 # partof: #SPC-implement-default-command
