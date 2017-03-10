@@ -18,3 +18,16 @@ text = '''Docker will remove Cargo after Artifact was installed'''
 
 [SPC-implement-default-command]
 text = '''When a user runs Docker without arguments, run `art ls` by default'''
+
+[REQ-versioned]
+text = '''
+Support all released versions
+'''
+
+[SPC-versioned]
+text = '''
+Uses `hooks/build` DockerHub hook in order to supply the currently building tag
+to the Dockerfile.
+
+The Dockerfile can use ARG to receive the version parameter for cargo.
+'''

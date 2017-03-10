@@ -1,4 +1,7 @@
 FROM fedora:latest
+MAINTAINER Ruben De Smet "me@rubdos.be"
+
+ARG VERSION_ARG
 
 # partof: #SPC-install-artifact
 
@@ -7,7 +10,7 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     dnf clean all && \
     curl https://sh.rustup.rs -sSf | \
            sh -s -- --default-toolchain nightly -y && \
-    $HOME/.cargo/bin/rustup run nightly cargo install --root=/usr artifact-app && \
+    $HOME/.cargo/bin/rustup run nightly cargo install --root=/usr $VERSION_ARG artifact-app && \
     $HOME/.cargo/bin/rustup self uninstall -y && \
     rm -rf ~./cargo ~/.rustup && \
     dnf group remove "C Development Tools and Libraries" -y
