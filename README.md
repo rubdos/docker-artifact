@@ -1,3 +1,7 @@
+[![build status](https://gitlab.com/rubdos/docker-artifact/badges/master/build.svg)](https://gitlab.com/rubdos/docker-artifact/commits/master)
+[![Docker Automated build](https://img.shields.io/docker/automated/rubdos/artifact.svg)](https://hub.docker.com/r/rubdos/artifact/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/rubdos/artifact.svg)](https://hub.docker.com/r/rubdos/artifact/)
+
 # Artifact Docker image
 
 This is a convenient Docker image for [artifact](https://github.com/vitiral/artifact).
