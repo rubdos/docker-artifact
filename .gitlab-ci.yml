@@ -27,10 +27,8 @@ check:master:
 pages:
   stage: deploy
   script:
-  - mkdir public
-  - art export html
-  - mv index.html public/
-  - mv css public/
+  - mkdir -p public
+  - art export html -o public
   artifacts:
     paths:
     - public
