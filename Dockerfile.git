@@ -7,10 +7,10 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     dnf install -y curl file openssh-clients rsync git && \
     curl https://sh.rustup.rs -sSf | \
            sh -s -- --default-toolchain stable -y && \
-    git clone https://github.com/vitiral/artifact.git && \
-    cd artifact && $HOME/.cargo/bin/rustup run stable cargo install --root=/usr && \
+    git clone https://github.com/vitiral/artifact.git /usr/src/artifact && \
+    cd /usr/src/artifact && $HOME/.cargo/bin/rustup run stable cargo install --root=/usr && cd / && \
     $HOME/.cargo/bin/rustup self uninstall -y && \
-    rm -rf ~./cargo ~/.rustup artifact && \
+    rm -rf ~./cargo ~/.rustup /usr/src/artifact && \
     dnf group remove "C Development Tools and Libraries" -y && \
     dnf clean all && rm -rf /var/cache/dnf
 
