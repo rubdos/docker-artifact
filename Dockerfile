@@ -13,6 +13,7 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     $HOME/.cargo/bin/rustup self uninstall -y && \
     rm -rf ~./cargo ~/.rustup && \
     dnf group remove "C Development Tools and Libraries" -y && \
+    dnf autoremove -y && \
     dnf clean all && rm -rf /var/cache/dnf
 # partof: #SPC-remove-cargo
 

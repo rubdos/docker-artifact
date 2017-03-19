@@ -12,6 +12,8 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     $HOME/.cargo/bin/rustup self uninstall -y && \
     rm -rf ~./cargo ~/.rustup /usr/src/artifact && \
     dnf group remove "C Development Tools and Libraries" -y && \
+    dnf remove git -y && \
+    dnf autoremove -y && \
     dnf clean all && rm -rf /var/cache/dnf
 
 CMD ["/root/.cargo/bin/art","ls"]
