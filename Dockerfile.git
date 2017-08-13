@@ -4,7 +4,7 @@ MAINTAINER Ruben De Smet "me@rubdos.be"
 ARG VERSION_ARG
 
 RUN dnf groupinstall -y "C Development Tools and Libraries" && \
-    dnf install -y curl file openssh-clients rsync git && \
+    dnf install -y curl file openssh-clients rsync git pkgconf openssl openssl-devel && \
     curl https://sh.rustup.rs -sSf | \
            sh -s -- --default-toolchain stable -y && \
     git clone https://github.com/vitiral/artifact.git /usr/src/artifact && \
@@ -12,7 +12,7 @@ RUN dnf groupinstall -y "C Development Tools and Libraries" && \
     $HOME/.cargo/bin/rustup self uninstall -y && \
     rm -rf ~./cargo ~/.rustup /usr/src/artifact && \
     dnf group remove "C Development Tools and Libraries" -y && \
-    dnf remove git -y && \
+    dnf remove git pkgconf openssl-devel -y && \
     dnf autoremove -y && \
     dnf clean all && rm -rf /var/cache/dnf
 
