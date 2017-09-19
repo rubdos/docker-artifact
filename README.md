@@ -14,9 +14,10 @@ Three kinds of tags are available: `latest`, `master` and specific versions:
   represents the latest release version.
 - `master` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/master/Dockerfile.git))
   the current git master/development version.
-- `0.9.6` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.9.6/Dockerfile))
+- `1.0.0` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/1.0.0/Dockerfile))
   equal to `latest`
 - Older versions (unsupported):
+  - `0.9.6` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.9.6/Dockerfile))
   - `0.9.1` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.9.1/Dockerfile))
   - `0.6.5` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.5/Dockerfile))
   - `0.6.4` ([Dockerfile](https://github.com/rubdos/docker-artifact/blob/0.6.4/Dockerfile))
